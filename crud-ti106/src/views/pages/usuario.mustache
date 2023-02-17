@@ -1,0 +1,28 @@
+{{>partials/header}}
+<a href="/cadastro">Adicionar Usuário</a>
+
+<table border="1" width="100%">
+
+    <tr>
+        <th>ID</th>
+        <th>NOME</th>
+        <th>EMAIL</th>
+        <th>AÇÕES</th>
+    </tr>
+
+    {{#users}}
+    <tr>
+        <td>{{id}}</td>
+        <td>{{nome}}</td>
+        <td>{{email}}</td>
+        <td>
+            <a href="/editar/{{id}}"><img src="/images/ferramenta-lapis.png" width="20px"></a>
+            <a href="/excluir/{{id}}" onclick="return confirm ('Deseja realmente exluir?')"><img src="/images/lixeira.png" width="20px">
+
+        </td>
+    </tr>
+    {{/users}}
+
+</table>
+
+{{>partials/footer}}
